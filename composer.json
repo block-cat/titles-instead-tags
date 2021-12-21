@@ -1,0 +1,31 @@
+{
+  "name": "block-cat/titles-instead-tags",
+  "description": "Replace tags with discussion titles in menu on Main Page",
+  "keywords": [
+    "flarum"
+  ],
+  "type": "flarum-extension",
+  "license": "MIT",
+  "require": {
+    "flarum/core": "^1.0",
+    "afrux/forum-widgets-core": "^0.1.0"
+  },
+  "authors": [{
+    "name": "BlockCat"
+  }],
+  "autoload": {
+    "psr-4": {
+      "BlockCat\\TitlesInsteadTags\\": "src/"
+    }
+  },
+  "extra": {
+    "flarum-extension": {
+      "title": "BkC Titles From Tags",
+      "icon": {
+        "name": "fas fa-heading",
+        "backgroundColor": "#083",
+        "color": "#fff"
+      }
+    }
+  }
+}
