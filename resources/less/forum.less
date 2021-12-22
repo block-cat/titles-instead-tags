@@ -1,32 +1,80 @@
-.DiscussionTitle-title {
-    padding: 8px 0 8px 20px;
+@media (min-width: 990px) and (max-width: 2560px) {
+    .DiscussionTitle-title {
+        margin-bottom: 3px;
+        margin-left: -10px;
+        > a {
+            color: var(--sidenav-color, #667c99);
+            padding: 5px 0 5px 40px;
+            display: block;
+            width: 100%;
+            border-radius: 4px 0 0 4px; 
+            border: 0;
+            background: none;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            box-shadow: none;
+            text-align: left;
+            font-size: 13px;
+            font-weight: normal;
+            text-decoration: none;
+            cursor: pointer;
+        }
 
-    > a {
-        color: var(--sidenav-color, #667c99);
-        display: block;
-        width: 100%;
-        border-radius: 0;
-        border: 0;
-        background: none;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        box-shadow: none;
-        text-align: left;
-        font-size: 13px;
-        font-weight: normal;
-        text-decoration: none;
-        cursor: pointer;
+        > a .Button-icon {
+            float: left;
+            margin-left: -30px;
+            font-size: 15px;
+        }
+    
+        &.active > a {
+            font-weight: 700;
+            background: #e8ecf3;
+            color: #426799;
+            border-right: 3px solid #4d698e;
+        }
+
+        > a:hover {
+            background: #e5eef6b0 !important;
+            color: var(--sidenav-color-hover, #135da2);
+        }
     }
 
-    &.active > a {
-        font-weight: 700;
-        background: #e8ecf3;
-        color: #426799;
-        border-right: 3px solid #4d698e;
+    .sideNav .Dropdown--select .Dropdown-menu > li.active > a {
+        border-radius: 4px 0 0 4px;
     }
-}
 
-.sideNav_border {
-    overflow-y: auto;
+    .sideNav {
+        overflow-y: auto;
+        scrollbar-width: none;
+    }
+
+    .sideNav::-webkit-scrollbar {
+        display: none;
+    }
+    
+    /* se poate de jucat cu stilurile la scrolling in dependenta de browser */
+    // .DiscussionTitle{
+    //     > ul::-webkit-scrollbar-thumb {
+    //         background-color: red;
+    //         border: 4px solid transparent;
+    //         border-radius: 8px;
+    //         background-clip: padding-box;  
+    //       }
+          
+    //     > ul::-webkit-scrollbar {
+    //         width: 16px;
+    //       }
+    // }
+
+    .sideNav > ul {
+        width: 230px !important;
+    }
+
+
+    .AfruxWidgets-Widget-content {
+        padding: 0 !important;
+        background-color: unset !important;
+
+    }
 }

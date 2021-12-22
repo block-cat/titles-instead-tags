@@ -8,7 +8,7 @@ import Stream from 'flarum/common/utils/Stream';
 export default class discussionTitles extends Widget {
     oninit(vnode) {
         super.oninit(vnode);
-        this.loading = true;
+        // this.loading = true;
 
         // for ordered pages
         this.pages = [];
@@ -48,7 +48,7 @@ export default class discussionTitles extends Widget {
                     };
                     app.discussions.pages.push(page);
 
-                    this.loading = false;
+                    // this.loading = false;
                     m.redraw();
                 });
         }
@@ -61,12 +61,12 @@ export default class discussionTitles extends Widget {
 
     icon() {
         // Widget icon.
-        return 'fab fa-hotjar hotwdg';
+        // return 'fab fa-hotjar hotwdg';
     }
 
     title() {
         // Widget title.
-        return app.translator.trans('Lista de discutii');
+        // return app.translator.trans('Lista de discutii');
     }
 
     content() {
@@ -95,6 +95,8 @@ export default class discussionTitles extends Widget {
                                     return page.items.map((discussion) => (
                                         <li className={"DiscussionTitle-title " + (this.active(discussion) ? "active" : '')}>
                                             <Link href={app.route.discussion(discussion)} alt={discussion.title()}>
+                                                {/* by Tudor - am adaugat placeholder pentru icon */}
+                                                <span class="Button-icon icon TagIcon"></span>
                                                 {discussion.title()}
                                             </Link>
                                         </li>
