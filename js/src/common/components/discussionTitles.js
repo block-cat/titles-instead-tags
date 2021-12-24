@@ -82,6 +82,10 @@ export default class discussionTitles extends Widget {
         if (this.loading) {
             return <LoadingIndicator />;
         }
+
+        // animate scroll to active title
+        var activeTitle = document.getElementById("activeTitle");
+        activeTitle?.scrollIntoView({block: 'start', behavior: 'smooth'});
         
         return (
             <div className="DiscussionTitle">
@@ -93,7 +97,8 @@ export default class discussionTitles extends Widget {
                                     this.oneTime[this.pages.indexOf(index)]++;
 
                                     return page.items.map((discussion) => (
-                                        <li className={"DiscussionTitle-title " + (this.active(discussion) ? "active" : '')}>
+                                        <li className={"DiscussionTitle-title " + (this.active(discussion) ? "active" : '')}
+                                            id={(this.active(discussion) ? "activeTitle" : '')}>
                                             <Link href={app.route.discussion(discussion)} alt={discussion.title()}>
                                                 {/* by Tudor - am adaugat placeholder pentru icon */}
                                                 <span class="Button-icon icon TagIcon"></span>
